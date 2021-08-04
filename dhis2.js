@@ -11,7 +11,6 @@ getTEIs({
 
 fn(state => {
   const { trackedEntityInstances } = state.data;
-  console.log('Sample TEI:', trackedEntityInstances[0]);
 
   const preparedData = trackedEntityInstances
     .map(tei => ({
@@ -22,6 +21,7 @@ fn(state => {
     }))
     .filter(tei => tei.firstName && tei.lastName && tei.id);
 
+  console.log('Sample TEI:', preparedData[0]);
   // return { ...state, data: preparedData.shift() };
   return { ...state, data: preparedData };
 });

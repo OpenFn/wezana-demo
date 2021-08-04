@@ -1,3 +1,8 @@
+// getResources('orgUnits', {
+//     fields: '*',
+//     responseType: 'json',
+// });
+
 getTEIs({
   fields: '*',
   ou: 'CMqUILyVnBL',

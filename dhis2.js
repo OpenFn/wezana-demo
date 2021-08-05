@@ -1,8 +1,3 @@
-// getResources('orgUnits', {
-//     fields: '*',
-//     responseType: 'json',
-// });
-
 getTEIs({
   fields: '*',
   ou: 'DiszpKrYNg8',
@@ -11,6 +6,8 @@ getTEIs({
 
 fn(state => {
   const { trackedEntityInstances } = state.data;
+  
+  console.log(trackedEntityInstances[0]);
 
   const preparedData = trackedEntityInstances
     .map(tei => ({

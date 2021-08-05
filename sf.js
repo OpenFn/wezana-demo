@@ -1,4 +1,9 @@
 // for a single one...
+create('Contact', {
+  Name: "Taylor",
+});
+
+
 // upsert(
 //   'Contact',
 //   'DHIS2_ID__c',
@@ -24,29 +29,29 @@
 // );
 
 // or for bulk...
-bulk(
-  'Contact',
-  'upsert',
-  { extIdField: 'DHIS2_ID__c', failOnError: true },
-  state =>
-    state.data.map(tei => {
-      return {
-        DHIS2_ID__c: tei.id.value,
-        FirstName: tei.firstName.value,
-        LastName: tei.lastName.value,
-        MailingAddress: tei.Address,
-        Email: tei.email,
-        MobilePhone: tei.phone,
-      };
-    })
-);
+// bulk(
+//   'Contact',
+//   'upsert',
+//   { extIdField: 'DHIS2_ID__c', failOnError: true },
+//   state =>
+//     state.data.map(tei => {
+//       return {
+//         DHIS2_ID__c: tei.id.value,
+//         FirstName: tei.firstName.value,
+//         LastName: tei.lastName.value,
+//         MailingAddress: tei.Address,
+//         Email: tei.email,
+//         MobilePhone: tei.phone,
+//       };
+//     })
+// );
 
-bulk('Patient_Satisfaction_S__c', 'insert', { failOnError: true }, state =>
-  state.data.map(tei => ({
-    'Contact__r.DHIS2_ID__c': tei.id.value,
-    Region__c: 'West',
-    Facility_Ownership__c: 'NGO',
-    Facility_Type__c: 'Hospital',
-    Location__c: 'Rural',
-  }))
-);
+// bulk('Patient_Satisfaction_S__c', 'insert', { failOnError: true }, state =>
+//   state.data.map(tei => ({
+//     'Contact__r.DHIS2_ID__c': tei.id.value,
+//     Region__c: 'West',
+//     Facility_Ownership__c: 'NGO',
+//     Facility_Type__c: 'Hospital',
+//     Location__c: 'Rural',
+//   }))
+// );

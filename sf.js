@@ -1,6 +1,7 @@
 // for a single one...
 create('Contact', {
-  Name: "Taylor",
+  FirstName: "Taylor",
+  LastName: "Downs",
 });
 
 

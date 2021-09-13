@@ -24,5 +24,5 @@ fn(state => {
 
   console.log('Sample TEI:', preparedData[0]);
   // return { ...state, data: preparedData.shift() };
-  return { ...state, data: preparedData };
+  return { ...state, references: [], data: preparedData };
 });
